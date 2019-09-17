@@ -20,7 +20,7 @@
 - 封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域形成闭包，并且可以访问或者修改私有状态。
 
 现代模块机制的核心概念
-```
+```js
 var myModule = (function Manager() {
   var modules = {};
   function define(name, deps, impl) {
@@ -79,3 +79,32 @@ ES6模块在独立的文件中。浏览器或引擎有一个默认的“模块�
 4. 公开API暴露的属性和方法不仅仅是普通的值或引用的赋值，他们是到内部模块定义中的标识符的实际绑定。
 5. 导入模块和静态请求加载这个模块是一样的，浏览器中意味着网络阻塞加载，Node中则是从文件系统的阻塞加载。
 
+### class
+ES5构造函数
+```js
+function Foo(a, b) {
+  this.x = a;
+  this.y = b;
+}
+Foo.prototype.gimmeXY = function() {
+  return this.x * this.y;
+};
+```
+ES6 class形式改写：
+```js
+class Foo {
+  constructor(a, b) {
+    this.x = a;
+    this.y = b;
+  }
+  gimmeXY() {
+    return this.x * this.y;
+  }
+}
+```
+可见都可以用`var f = new Foo(5, 20)`实例化。
+
+> 不同点：
+> - class Foo只能通过new实例化，而function Foo可用Foo.call(obj)
+> - class Foo不存在变量提升（Hoisting），而function Foo有作用域提升
+> - 全局作用域中，class Foo创建了这个作用域的词法标识符Foo，并没有创建一个同名的全局对象属性。而function Foo全创建了。
