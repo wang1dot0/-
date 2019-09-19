@@ -108,3 +108,38 @@ class Foo {
 > - class Foo只能通过new实例化，而function Foo可用Foo.call(obj)
 > - class Foo不存在变量提升（Hoisting），而function Foo有作用域提升
 > - 全局作用域中，class Foo创建了这个作用域的词法标识符Foo，并没有创建一个同名的全局对象属性。而function Foo全创建了。
+
+### ES6 新增API
+__ARRAY:__  
+`Array.of`  
+`Array.from`  
+`Array#copyWithin(target = 0, start = 0, end = this.length)`  
+`Array#fill(value, start = 0, end = this.length)`  
+`Array#find(cb(element, index, array), context)`  
+`Array#findIndex`  
+`Array#values|keys|entries` 迭代器方法，将空槽位转化为`undefined`  
+
+__OBJECT:__  
+`Object.is` (0, -0), (NaN, NaN)  
+`Object.assign` 浅拷贝|不拷贝不可枚举的属性与非自有的属性  
+`Object.getOwnPropertySymbols`  
+`Object.setPrototypeOf`  
+
+__MATH:__  
+三角函数|算术|元工具
+
+__NUMBER:__  
+`Number.EPSILON` 2^-52  
+`Number.MAX_SAFE_INTEGER` 2^53 - 1  
+`Number.MIN_SAFE_INTEGER` -(2^53 - 1)
+
+`Number.isNaN`  
+`Number.isFinite`  
+`Number.isInteger`  
+`Number.isSafeInteger`
+
+__String__  
+`String.fromCodePoint`
+`String.raw`
+`String#repeat`
+`String#startsWith|endsWith|includes(searchStr, position = 0)`  
