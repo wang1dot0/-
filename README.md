@@ -143,3 +143,29 @@ __String__
 `String.raw`
 `String#repeat`
 `String#startsWith|endsWith|includes(searchStr, position = 0)`  
+
+#### Reflect
+1. 定义一个独立的全局对象，解绑全局属性绑定在Object的奇怪现象。
+2. 让原有的Object的方法的返回值更加友好，而不是直接抛错
+3. 让Object的操作都变成了函数，而不是指令，如delete attr 和 attr in obj
+4. Reflect的属性与Proxy的属性一一对应
+5. Reflect的第一个参数如果不是对象，会抛出错误，而Object会试图对它类型转换
+
+has |  
+set |  
+deleteProperty |  
+
+has |  
+enumberate |  
+ownKeys |  
+
+apply |  
+construct |  
+
+setPrototypeof |  
+getPrototypeof |  
+preventExtensions |  
+isExtensible |  
+defineProperty |  
+getOwnPropertyDescriptor |  
+
